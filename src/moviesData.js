@@ -123,8 +123,7 @@ export const moviesData = [
     original_title: "Future World",
     backdrop_path: "/g29nhwmOiYElKW27hzohK6nSwpC.jpg",
     adult: false,
-    overview:
-      "A young boy searches a future world wasteland for a rumored cure for his dying mother.",
+    overview: "A young boy searches a future world wasteland for a rumored cure for his dying mother.",
     release_date: "2018-05-25"
   },
   {
@@ -203,8 +202,7 @@ export const moviesData = [
     original_title: "Loving Pablo",
     backdrop_path: "/qbAwhPUhzHMofSbV5GpeAFrb6pg.jpg",
     adult: false,
-    overview:
-      "A journalist strikes up a romantic relationship with notorious drug lord Pablo Escobar.",
+    overview: "A journalist strikes up a romantic relationship with notorious drug lord Pablo Escobar.",
     release_date: "2018-03-09"
   },
   {
