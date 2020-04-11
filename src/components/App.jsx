@@ -12,37 +12,39 @@ class App extends React.Component {
     currentPage: 1,
     totalPages: 1,
     movies: [],
-    moviesWillWatch: []
+    moviesWillWatch: [],
   };
 
-  removeMovie = id => {
-    this.setState({
-      movies: this.state.movies.filter(movieItem => movieItem.id !== id)
+  removeMovie = (id) => {
+    this.setState((state) => {
+      return { movies: state.movies.filter((movieItem) => movieItem.id !== id) };
     });
   };
 
-  addToWillWatch = movie => {
-    this.setState({
-      moviesWillWatch: [...this.state.moviesWillWatch, movie]
+  addToWillWatch = (movie) => {
+    this.setState((state) => {
+      return { moviesWillWatch: [...state.moviesWillWatch, movie] };
     });
   };
 
-  removeFromWillWatch = removeMovie => {
-    this.setState({
-      moviesWillWatch: this.state.moviesWillWatch.filter(willWatchMovie => willWatchMovie.id !== removeMovie.id)
+  removeFromWillWatch = (removeMovie) => {
+    this.setState((state) => {
+      return {
+        moviesWillWatch: state.moviesWillWatch.filter((willWatchMovie) => willWatchMovie.id !== removeMovie.id),
+      };
     });
   };
 
-  tabChangeHandler = tabKey => () => {
+  tabChangeHandler = (tabKey) => () => {
     this.setState({
-      sortBy: tabKey
+      sortBy: tabKey,
     });
   };
 
-  changePage = newPage => event => {
+  changePage = (newPage) => (event) => {
     event.preventDefault();
     this.setState({
-      currentPage: newPage
+      currentPage: newPage,
     });
   };
 
@@ -54,7 +56,7 @@ class App extends React.Component {
     return await fetch(
       `${ENDPOINT}/${PATH}?api_key=${API_KEY}&sort_by=${this.state.sortBy}&page=${this.state.currentPage}`
     )
-      .then(response => response.json())
+      .then((response) => response.json())
       .catch(console.error);
   }
 
